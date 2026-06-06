@@ -13,6 +13,17 @@
     padding: 1.125rem 1.25rem;
     margin-bottom: 2px;
   }
+
+  .teamName,
+  .round,
+  .kickoff,
+  .statusChip,
+  .vs,
+  .venue,
+  .pens,
+  .cancelledLabel { color: #fff; }
+
+  .score { color: var(--gold); }
 }
 
 .live { border-left: 2px solid #C62828; }

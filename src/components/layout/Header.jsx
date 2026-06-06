@@ -6,6 +6,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.brand}>
+          <img src="/worldcuplogo.png" alt="FIFA World Cup 2026" className={styles.logo} />
           <span className={styles.wordmark}>
             <span className={styles.wc}>World Cup</span>
             <span className={styles.year}>2026</span>

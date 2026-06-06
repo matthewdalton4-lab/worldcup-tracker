@@ -13,6 +13,14 @@
 .brand {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .wordmark {

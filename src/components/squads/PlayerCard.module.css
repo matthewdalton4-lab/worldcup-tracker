@@ -4,7 +4,8 @@
   gap: 0.625rem;
   padding: 0.625rem 0.75rem;
   background: var(--surface-1);
-  border-bottom: 1px solid var(--surface-2);
+  border-right: 1px solid var(--surface-3);
+  border-bottom: 1px solid var(--surface-3);
   transition: background var(--transition);
 }
 .card:hover { background: var(--surface-2); }

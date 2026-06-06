@@ -77,8 +77,6 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px;
-  background: var(--surface-3);
   border: 1px solid var(--surface-3);
 }
 

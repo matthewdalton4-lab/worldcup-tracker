@@ -8,10 +8,7 @@ const CARDS = [
   { to: '/leaderboard', label: 'Leaderboard', desc: 'Goals & assists leaders' },
 ]
 
-// Photo on Unsplash — unsplash.com/photos/1629977010057-6c5086645098
-// Ball hitting the back of the net, net in foreground, crowd + players through netting, daylight
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1629977010057-6c5086645098?w=1920&fm=jpg&q=85&auto=format'
+const HERO_IMG = '/crowd.png'
 
 export default function Home() {
   return (

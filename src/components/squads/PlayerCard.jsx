@@ -16,7 +16,7 @@ export default function PlayerCard({ player }) {
         src={player.photo}
         alt={player.name}
         className={styles.photo}
-        onError={(e) => { e.currentTarget.style.opacity = '0' }}
+        onError={(e) => { e.currentTarget.style.display = 'none' }}
       />
 
       <div className={styles.info}>

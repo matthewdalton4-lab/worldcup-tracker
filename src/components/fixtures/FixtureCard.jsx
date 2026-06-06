@@ -100,7 +100,7 @@ function TeamSide({ team, winner, right }) {
         src={team.logo}
         alt={team.name}
         className={styles.logo}
-        onError={(e) => { e.currentTarget.style.opacity = '0' }}
+        onError={(e) => { e.currentTarget.style.display = 'none' }}
       />
       <span className={`${styles.teamName} ${winner ? styles.winner : ''}`}>
         {team.name}

@@ -47,7 +47,7 @@ export default function GroupTable({ group }) {
                     src={entry.team.logo}
                     alt={entry.team.name}
                     className={styles.logo}
-                    onError={(e) => { e.currentTarget.style.opacity = '0' }}
+                    onError={(e) => { e.currentTarget.style.display = 'none' }}
                   />
                   <span>{entry.team.name}</span>
                 </td>

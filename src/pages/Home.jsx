@@ -20,7 +20,7 @@ export default function Home() {
       >
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <img src="/worldcuplogo.png" alt="FIFA World Cup 2026" className={styles.heroLogo} />
+          <img src="/2026_FIFA_World_Cup_emblem.svg" alt="FIFA World Cup 2026" className={styles.heroLogo} />
           <h1 className={styles.heroTitle}>2026</h1>
           <p className={styles.heroSub}>USA &middot; Canada &middot; Mexico &mdash; 11 June – 19 July</p>
         </div>

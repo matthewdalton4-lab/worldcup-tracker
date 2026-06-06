@@ -21,8 +21,14 @@ export function useTeams() {
 
         const standingsGroups = data?.response?.[0]?.league?.standings ?? []
 
+        // Filter to only lettered groups (Group A–L) — the API also returns a
+        // "3rd Place" ranking table which would cause teams to appear twice.
+        const letterGroups = standingsGroups.filter((group) =>
+          /^Group [A-Z]$/.test(group[0]?.group ?? '')
+        )
+
         const mapped = []
-        for (const group of standingsGroups) {
+        for (const group of letterGroups) {
           for (const entry of group) {
             mapped.push({
               id:    entry.team.id,

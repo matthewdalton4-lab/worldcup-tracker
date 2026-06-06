@@ -37,7 +37,9 @@ export function useStandings() {
     try {
       const data = await fetchStandings()
       // API-Football nests standings under response[0].league.standings
-      const raw = data.response?.[0]?.league?.standings ?? []
+      const allGroups = data.response?.[0]?.league?.standings ?? []
+      // Exclude the "3rd Place" ranking table — keep only lettered groups (A–L)
+      const raw = allGroups.filter((g) => /^Group [A-Z]$/.test(g[0]?.group ?? ''))
       setGroups(raw)
       setLastUpdated(new Date())
       if (data.latestUpdate) setDataUpdated(data.latestUpdate)

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://unsplash.com/s/photos/soccer-stadium-crowd-goal\")",
+      "Bash(grep -oE 'photo-[a-zA-Z0-9_-]{10,}')",
+      "Bash(curl -sL \"https://unsplash.com/s/photos/football-goal-crowd-stadium\")",
+      "Bash(grep -oE 'photo-[a-zA-Z0-9]{10,}')",
+      "Bash(curl -sL \"https://unsplash.com/s/photos/soccer-goal-scored-celebration-stadium\")",
+      "Bash(grep -oE 'photo-[a-zA-Z0-9_-]{11,}')",
+      "Bash(curl -sL \"https://unsplash.com/s/photos/football-net-bulging-goal\")"
+    ]
+  }
+}

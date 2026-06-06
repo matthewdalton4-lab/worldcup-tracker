@@ -1,0 +1,258 @@
+/* ── Scroll container ─────────────────────────────────────────────────────── */
+.scrollWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--surface-3);
+}
+
+/* ── Table base ───────────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.table th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.625rem;
+  text-align: left;
+  border-bottom: 1px solid var(--surface-3);
+  user-select: none;
+  position: relative;
+}
+
+.table th:hover {
+  color: var(--text-secondary);
+}
+
+.table td {
+  padding: 0.5rem 0.625rem;
+  border-bottom: 1px solid var(--surface-2);
+  color: var(--text-secondary);
+  background: var(--surface-1);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--surface-2);
+}
+
+/* ── Sorted column highlight ─────────────────────────────────────────────── */
+.sorted {
+  background: rgba(201, 168, 76, 0.06) !important;
+}
+
+.table th.sorted {
+  color: var(--gold) !important;
+}
+
+/* ── Top scorer row — gold left border ───────────────────────────────────── */
+.topScorer td:first-child {
+  border-left: 3px solid var(--gold);
+}
+
+/* ── Sticky columns ─────────────────────────────────────────────────────── */
+.sticky {
+  position: sticky;
+  z-index: 2;
+}
+
+/* ── Column sizing ───────────────────────────────────────────────────────── */
+.rankCol {
+  width: 36px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  left: 0;
+}
+
+.nameCol {
+  left: 36px;
+  min-width: 140px;
+  max-width: 200px;
+}
+
+.goalsCol {
+  text-align: center;
+}
+
+/* Subtle scroll shadow after sticky columns */
+.nameCol::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -6px;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to right, rgba(0,0,0,0.18), transparent);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.teamNameCol {
+  min-width: 140px;
+  max-width: 220px;
+}
+
+/* ── Player cell layout ───────────────────────────────────────────────────── */
+.playerCell {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.playerName {
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nationMini {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+  display: none; /* toggled by .showMobile below */
+}
+
+/* ── Team cell layout ────────────────────────────────────────────────────── */
+.teamCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teamLogoSmall {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.teamLogoTiny {
+  display: none;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ── Stat values ──────────────────────────────────────────────────────────── */
+.statCell {
+  text-align: center;
+}
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.ycVal {
+  display: inline-block;
+  background: #e6b800;
+  color: #000;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.rcVal {
+  display: inline-block;
+  background: #cc2200;
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.zero {
+  color: var(--text-muted);
+}
+
+.pos { color: #4caf82; font-weight: 600; }
+.neg { color: #e05050; font-weight: 600; }
+
+/* ── Sort icon ────────────────────────────────────────────────────────────── */
+.sortIcon {
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 0.55rem;
+  opacity: 0.3;
+  vertical-align: middle;
+}
+
+.sortActive {
+  opacity: 1;
+  color: var(--gold);
+}
+
+/* ── Show/hide helpers ───────────────────────────────────────────────────── */
+.showMobile { display: none; }
+
+/* ── Mobile breakpoint ───────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hideMobile { display: none !important; }
+
+  .showMobile { display: block !important; }
+
+  .nationMini { display: block; }
+
+  .teamLogoTiny { display: inline-block; }
+
+  .table td,
+  .table th {
+    padding: 0.45rem 0.5rem;
+  }
+
+  /* Solid backgrounds for sticky cells so scrolled content hides beneath */
+  .table td.sticky {
+    background: var(--surface-1);
+  }
+
+  .table th.sticky {
+    background: var(--surface-2);
+  }
+
+  .table tr:hover td.sticky {
+    background: var(--surface-2);
+  }
+}
+
+/* ── Skeleton ─────────────────────────────────────────────────────────────── */
+.skeletonWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--surface-3);
+  border: 1px solid var(--surface-3);
+}
+
+.skeletonRow { height: 48px; }
+
+/* ── Empty ────────────────────────────────────────────────────────────────── */
+.empty {
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  border: 1px solid var(--surface-3);
+}

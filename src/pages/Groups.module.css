@@ -1,0 +1,61 @@
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  letter-spacing: 0.04em;
+}
+
+.fetched {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.refreshBtn {
+  background: none;
+  border: 1px solid var(--surface-4);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.875rem;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+.refreshBtn:hover:not(:disabled) {
+  border-color: var(--gold-dark);
+  color: var(--gold);
+}
+.refreshBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.qualBar {
+  display: inline-block;
+  width: 12px;
+  height: 3px;
+  background: var(--gold-dark);
+  flex-shrink: 0;
+}

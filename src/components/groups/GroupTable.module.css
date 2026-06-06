@@ -1,0 +1,90 @@
+.wrapper {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-3);
+  overflow: hidden;
+}
+
+.title {
+  padding: 0.5rem 0.875rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--surface-3);
+}
+
+/* Scroll wrapper: lets the table scroll horizontally if it ever needs to,
+   without blowing out the page layout. On mobile the hidden columns make
+   this unnecessary, but it's a safety net. */
+.scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  /* Prevent the table from shrinking below its natural min */
+  min-width: 0;
+}
+
+/* ── Scoped to .table so these don't leak globally ── */
+.table th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--surface-3);
+}
+
+.table tr { border-bottom: 1px solid var(--surface-2); }
+.table tr:last-child { border-bottom: none; }
+.table tr:hover td { background: var(--surface-2); }
+
+.qualified td:first-child {
+  border-left: 2px solid var(--gold-dark);
+}
+
+.table td { padding: 0.4rem 0.5rem; vertical-align: middle; }
+
+.rank    { text-align: center; width: 24px; color: var(--text-muted); font-size: 0.72rem; }
+.teamCol { display: flex; align-items: center; gap: 0.5rem; min-width: 110px; font-weight: 500; font-size: 0.8rem; }
+.stat    { text-align: center; width: 30px; color: var(--text-secondary); }
+.pts     { font-weight: 700; color: var(--text-primary); }
+
+.logo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.form    { min-width: 72px; }
+.bubbles { display: flex; gap: 2px; }
+.bubble {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+.win  { background: var(--accent-win);  color: #fff; }
+.draw { background: var(--accent-draw); color: #000; }
+.loss { background: var(--accent-loss); color: #fff; }
+
+/* ── Hide on mobile ── */
+@media (max-width: 480px) {
+  .hideMobile { display: none; }
+  /* Tighten the remaining cells so the 6-column table fits ~350px */
+  .table td,
+  .table th { padding: 0.4rem 0.35rem; }
+  .rank { width: 20px; }
+  .stat { width: 26px; }
+}

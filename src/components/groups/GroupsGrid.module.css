@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 1px;
+  background: var(--surface-3);
+  border: 1px solid var(--surface-3);
+}
+
+.skeletonTable { height: 220px; }
+
+.empty {
+  color: var(--text-muted);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 540px) {
+  .grid { grid-template-columns: 1fr; }
+}

@@ -4,6 +4,16 @@
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    background: var(--surface-card-mobile);
+    border-color: var(--gold-border-subtle);
+  }
+
+  .table td,
+  .table th { padding: 0.55rem 0.5rem; }
+}
+
 .title {
   padding: 0.5rem 0.875rem;
   font-family: var(--font-display);

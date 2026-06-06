@@ -5,6 +5,8 @@
 :root {
   /* Brand colours */
   --gold:        #C9A84C;
+  --gold-border-subtle: rgba(201, 168, 76, 0.4);
+  --surface-card-mobile: #1c1c1c;
   --gold-light:  #E2C96B;
   --gold-dark:   #8A6A1E;
   --black:       #000000;
@@ -49,6 +51,10 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  html { font-size: 17px; }
 }
 
 body {

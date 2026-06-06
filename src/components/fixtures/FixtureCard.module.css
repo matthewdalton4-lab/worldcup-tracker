@@ -6,6 +6,15 @@
 }
 .card:hover { background: var(--surface-2); }
 
+@media (max-width: 768px) {
+  .card {
+    background: var(--surface-card-mobile);
+    border: 1px solid var(--gold-border-subtle);
+    padding: 1.125rem 1.25rem;
+    margin-bottom: 2px;
+  }
+}
+
 .live { border-left: 2px solid #C62828; }
 .cancelled { opacity: 0.45; }
 

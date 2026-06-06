@@ -46,7 +46,7 @@
 }
 
 .heroLogo {
-  height: clamp(80px, 14vw, 160px);
+  height: clamp(140px, 22vw, 280px);
   width: auto;
   object-fit: contain;
   display: block;
